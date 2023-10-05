@@ -16,6 +16,12 @@ public class Main {
             System.out.println("Spiller "+ spillerNr+" angiv række og kolonne");
             r = input.nextInt();
             k = input.nextInt();
+            while((r>2 || k>2 ||r<0 || k<0) ||board[r][k]!=' '){
+                System.out.println("Ugyldigt træk indtast igen: ");
+                udskrivBoard(board);
+                r = input.nextInt();
+                k = input.nextInt();
+            }
             antalInput++;
             if(spillerNr==1)
                 board[r][k] = 'X';
